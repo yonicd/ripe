@@ -1,0 +1,11 @@
+Package: ripe
+Title: Replicate magrittr chains
+Version: 0.0.1
+Authors@R: person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut", "cre"))
+Description: Replicate magrittr chains directly at the end of the chain.
+Depends: R (>= 3.2.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: magrittr
+RoxygenNote: 6.0.1

@@ -1,0 +1,17 @@
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @param pattern PARAM_DESCRIPTION, Default: 'collect'
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname trim_pipe
+#' @export 
+trim_pipe <- function(x,pattern='collect'){
+  gsub(sprintf(' %%>%% %s(.*?)$',pattern),'',x)
+}

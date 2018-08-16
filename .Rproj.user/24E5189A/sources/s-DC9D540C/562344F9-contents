@@ -1,0 +1,212 @@
+#' @inherit purrr::'%>%'
+#' @importFrom purrr %>%
+#' @name %>%
+#' @rdname pipe
+#' @export
+NULL
+
+#' @importFrom purrr %||%
+#' @name %||%
+#' @rdname pipe
+#' @export
+NULL
+
+#' @inherit tidyr::gather
+#' @examples
+#' matrix(c(1:12),ncol=2)%>%
+#' gather()
+#' @importFrom tidyr gather
+#' @name gather
+#' @rdname gather
+#' @export
+NULL
+
+#' @import dplyr
+#' @importFrom tidyr gather
+#' @importFrom rlang .data
+#' @rdname gather
+#' @export 
+gather.matrix <- function(data, key = "key", value = "value", ..., na.rm = FALSE, 
+                          convert = FALSE, factor_key = FALSE){
+  
+  s <- dim(data)
+  nm <- dimnames(data)
+  
+  if(is.null(nm)){
+    new_list <- lapply(s,seq,from=1)
+  }else{
+    new_list <- mapply(function(x,s){
+      if(is.null(x)){
+        seq(1,s)
+      }else{
+        x
+      }
+    },x=nm,s=s,SIMPLIFY = FALSE)
+  }
+  
+  data%>%
+    dplyr::as_data_frame()%>%
+    tidyr::gather()%>%
+    dplyr::bind_cols(expand.grid(new_list,stringsAsFactors = FALSE))%>%
+    dplyr::select(.data[['Var1']],
+                  .data[['Var2']],
+                  .data[['value']])
+}
+
+#' @title Automatically flatten list columns by nested class
+#' @description If a list column elements are length 1 and a unique class the column will 
+#' automatically flatten to that class type 
+#' @param x tibble
+#' @return tibble
+#' @details 
+#' auto flattens chr,dbl,int,data.frame
+#' @examples 
+#' dplyr::data_frame(a = list(x=1, y=2),
+#'                   b = list(x='a', y='y'))%>%
+#' flatten_auto()
+#' @seealso 
+#'  \code{\link[purrr]{flatten}}
+#' @rdname flatten_auto
+#' @export 
+#' @importFrom purrr map flatten_dbl flatten_chr flatten_int flatten_df
+flatten_auto <- function(x){
+  out <- x
+  if(is.list(x)){
+    if(all(purrr::map(x,length)%>%purrr::flatten_dbl() == 1)){
+      
+      this_class <- purrr::map(x,class)%>%
+        purrr::flatten_chr()%>%
+        unique()
+      
+      if(length(this_class)==1){
+        out <- switch(this_class,
+          'character' = x%>%purrr::flatten_chr(),
+          'numeric' = x%>%purrr::flatten_dbl(),
+          'integer' = x%>%purrr::flatten_int(),
+          'logical' = x%>%purrr::flatten_lgl(),
+          x
+        )
+      }
+    }
+  }
+  return(out)
+}
+
+ifna <- function(x) ifelse(is.na(x),'',x)
+
+#'@importFrom utils compareVersion
+nm_version_mapping <- function(nmdat){
+  
+  if(utils::compareVersion(nmdat$nm_version,'7.4.2')==-1){
+
+           old_names <- names(nmdat)
+           
+           names(nmdat)[grepl('shrink$',old_names)] <- sprintf('%ssd',
+                                                               grep('shrink$',old_names,value = TRUE)
+                                                               )
+           
+  }
+  
+  return(nmdat)
+
+  
+}
+
+sort_comment <- function(x){
+  
+  sapply(strsplit(x,'\\|\\|'),function(y){
+    
+    fixed <- 1
+
+    brackets <- which(grepl('\\[|\\]',y))
+        
+    comment <- paste0(y[-c(fixed,brackets)],collapse = ' ')
+
+    if(length(brackets)==0){
+      y <- c(y,'')
+      brackets <- length(y)
+    }
+        
+    new_str <- gsub('^\\s|\\s$','',c(y[fixed],y[brackets],comment))
+    
+    if(sum(!nzchar(new_str))==3){
+      new_str <- c(new_str,'')
+    }
+    
+    paste0(new_str,collapse ='||')  
+  })
+  
+}
+
+
+#' @title Convert nibble to list
+#' @description Convert elements in a nibble to a list, while filtering the nibble
+#'  object by run number and estimation index.
+#' @param x nibble
+#' @param elems character, names of elements in the nibble to return, Default: NULL
+#' @param run character, run number to return, Default: NULL
+#' @param estimation integer, estimation index of the run to return, Default: 1
+#' @return list
+#' @details 
+#' 
+#'  Elements
+#'  
+#'  If no elements are specified all elements are placed in the list.
+#'  
+#'  Run numbers
+#'  
+#'  If none are specificied then the first one will be returned.
+#'  
+#'  If multiple runs are specified they will be returned.
+#' 
+#'  Estimations
+#'  
+#'  If no estimation index is specified the first one will be returned.
+#'  
+#'  If multiple estimation indicies are specied only the first one will be returned.  
+#' 
+#' @examples 
+#' 
+#' nbl <- tidynm::nibble(
+#' project = system.file('extdata',package = 'tidynm'),
+#' run = c('510'),estimation_index = 'all')
+#' 
+#' nbl%>%as_list()
+#' 
+#' nbl%>%as_list('theta',run=510)
+#' 
+#' nbl%>%as_list('theta',run=510,estimation = 3)
+#' 
+#' nbl%>%as_list(c('covariance','theta'),run = 510)
+#' @rdname as_list
+#' @export 
+#' @import dplyr
+#' @importFrom rlang UQS syms .data
+#' @importFrom purrr transpose
+as_list <- function(x,elems = NULL, run = NULL, estimation = 1){
+  
+  if(is.null(run)){
+    run <- x$run[[1]][1]
+  }
+  
+  if(length(estimation)>1)
+    message(sprintf('only 1 estimation can be exposed, returning estimation = %s',estimation[1]))
+  
+  x <- x%>%
+    dplyr::filter(.data[['run']]%in%run&.data[['table_series']]==estimation[1])
+  
+  if(!is.null(elems)){
+    x <- x%>%
+      dplyr::select(rlang::UQS(rlang::syms((elems))))
+  }
+  
+  xl <- x%>%
+    purrr::transpose()%>%
+    unlist(recursive = FALSE) 
+  
+  if(length(xl)==1){
+    xl <- xl[[1]]
+  }
+  
+  xl
+}

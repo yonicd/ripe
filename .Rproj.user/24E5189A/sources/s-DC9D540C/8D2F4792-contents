@@ -1,0 +1,17 @@
+library(ripe)
+
+iris %>% 
+  dplyr::sample_n(5) %>% 
+  ripe(purrr::rerun,.n=3)
+
+iris %>% 
+  dplyr::select(1:2) %>% 
+  dplyr::sample_n(20) %>% 
+  ripe(purrr::rerun,.n=3)
+
+iris %>% 
+  dplyr::select(1:2)%>% 
+  dplyr::sample_n(20) %>% 
+  dplyr::slice(1:5) %>%
+  ripe(purrr::rerun,.n=3)
+

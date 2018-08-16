@@ -1,0 +1,13 @@
+#' @title is it a pipe
+#' @description Check whether a symbol is a valid magrittr pipe.
+#' @param pipe A quoted symbol
+#' @return logical - TRUE if a valid magrittr pipe, FALSE otherwise.
+#' @rdname is_pipe
+#' @export 
+is_pipe <- function(pipe)
+{
+  identical(pipe, quote(`%>%`))   ||
+    identical(pipe, quote(`%T>%`))  ||
+    identical(pipe, quote(`%<>%`))  ||
+    identical(pipe, quote(`%$%`))
+}

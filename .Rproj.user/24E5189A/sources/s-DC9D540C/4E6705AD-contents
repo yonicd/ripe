@@ -1,0 +1,21 @@
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param x PARAM_DESCRIPTION
+#' @param .n PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @seealso 
+#'  \code{\link[purrr]{rerun}}
+#' @rdname ripe
+#' @export 
+#' @importFrom purrr rerun
+ripe <- function(x,.n){
+  y <- x%>%collect_pipe()%>%trim_pipe(pattern = 'rerun')
+  purrr::rerun(.n=.n,eval(parse(text = y)))
+}

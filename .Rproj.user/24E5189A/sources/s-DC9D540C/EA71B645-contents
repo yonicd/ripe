@@ -1,0 +1,17 @@
+#' @title FUNCTION_TITLE
+#' @description FUNCTION_DESCRIPTION
+#' @param pipe PARAM_DESCRIPTION
+#' @return OUTPUT_DESCRIPTION
+#' @details DETAILS
+#' @examples 
+#' \dontrun{
+#' if(interactive()){
+#'  #EXAMPLE1
+#'  }
+#' }
+#' @rdname is_pipe
+#' @export 
+is_pipe <- function (pipe) {
+  identical(pipe, quote(`%>%`)) || identical(pipe, quote(`%T>%`)) ||
+    identical(pipe, quote(`%<>%`)) || identical(pipe, quote(`%$%`))
+}

@@ -1,0 +1,66 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# ripe
+
+The goal of ripe is to rerun {magrittr} pipes using a pipe!
+
+Take any {magrittr} chain add `ripe()` and rerun it using your favorite replication function. 
+
+## Installation
+
+```{r,eval=FALSE}
+remotes::install_github('yonicd/ripe')
+```
+
+## Example
+
+This is a basic example which shows you how to use `{ripe}`:
+
+### Base `R`
+
+```{r example}
+library(ripe)
+
+stats::runif(20)%>%
+  sample(4)%>%
+  ripe(replicate,n=4,simplify=FALSE)
+
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripe(replicate,n=4,simplify=FALSE)
+
+```
+ 
+### tidy
+ 
+```{r}
+iris %>% 
+  dplyr::sample_n(5) %>% 
+  ripe(purrr::rerun,.n=3)
+
+iris %>% 
+  dplyr::select(1:2) %>% 
+  dplyr::sample_n(20) %>% 
+  ripe(purrr::rerun,.n=3)
+
+iris %>% 
+  dplyr::select(1:2)%>% 
+  dplyr::sample_n(20) %>% 
+  dplyr::slice(1:5) %>%
+  ripe(purrr::rerun,.n=3)
+```
