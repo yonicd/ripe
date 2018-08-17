@@ -58,7 +58,7 @@ stats::runif(20)%>%
 stats::runif(20)%>%
   sample(10)%>%
   utils::head(5)%>%
-  ripely(lapply, X=1:4)
+  ripe(lapply, X=1:4)
 ```
 
 #### mclapply 
@@ -67,7 +67,7 @@ stats::runif(20)%>%
 stats::runif(20)%>%
   sample(10)%>%
   utils::head(5)%>%
-  ripely(
+  ripe(
     parallel::mclapply,
     X=1:4,
     mc.cores = parallel::detectCores()-1)

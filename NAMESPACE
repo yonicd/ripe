@@ -2,5 +2,4 @@
 
 export("%>%")
 export(ripe)
-export(ripely)
 importFrom(magrittr,"%>%")

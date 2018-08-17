@@ -2,12 +2,9 @@
 % Please edit documentation in R/ripe.R
 \name{ripe}
 \alias{ripe}
-\alias{ripely}
 \title{Replicate magrittr chain}
 \usage{
 ripe(x, f, ...)
-
-ripely(x, f, ...)
 }
 \arguments{
 \item{x}{chain}
@@ -22,9 +19,6 @@ object that f outputs
 \description{
 Lazily replicate magrittr chain
 }
-\details{
-\code{ripely} is for *apply family of functions.
-}
 \examples{
 stats::runif(20)\%>\%
  sample(4)\%>\%
@@ -32,7 +26,7 @@ stats::runif(20)\%>\%
  
 stats::runif(20)\%>\%
  sample(4)\%>\%
- ripely(lapply,X=1:4)
+ ripe(lapply,X=1:4)
 }
 \seealso{
 \code{\link[purrr]{rerun}}
