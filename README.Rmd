@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 The goal of ripe is to rerun {magrittr} pipes using a pipe!
 
-Take any {magrittr} chain add `ripe()` and rerun it using your favorite replication function. 
+Take any {magrittr} chain add `ripe()` and rerun it lazily using your favorite replication function. 
 
 ## Installation
 
