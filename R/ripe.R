@@ -15,5 +15,7 @@
 ripe <- function(x,f,...){
   cp <- chain_parts(x)
   f_ <- function(){pipe_(cp)}
+
   f(f_(),...)
+
 }

@@ -37,8 +37,11 @@ This is a basic example which shows you how to use `{ripe}`:
 library(ripe)
 
 stats::runif(20)%>%
-  sample(4)%>%
-  ripe(replicate,n=4,simplify=FALSE)
+  ripe(replicate,n=2,simplify=FALSE)
+
+stats::runif(20)%>%
+  sample(10)%>%
+  ripe(replicate,n=3,simplify=FALSE)
 
 stats::runif(20)%>%
   sample(10)%>%
@@ -57,7 +60,7 @@ iris %>%
 iris %>% 
   dplyr::select(1:2) %>% 
   dplyr::sample_n(20) %>% 
-  ripe(purrr::rerun,.n=3)
+  ripe(purrr::rerun,.n=1)
 
 iris %>% 
   dplyr::select(1:2)%>% 

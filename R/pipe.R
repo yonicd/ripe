@@ -35,6 +35,9 @@ pipe_ <- function(cp){
     
     env$`_function_list` <- env$`_function_list`[-idx]
     
+    if(length(env$`_function_list`)==0)
+      env$`_function_list` <-  append(env$`_function_list`,identity)
+    
     # compute the result by applying the function to the LHS
     result <- withVisible(eval(expr = quote(`_fseq`(`_lhs`)),envir =  env,enclos =  env))
     
