@@ -33,6 +33,8 @@ This is a basic example which shows you how to use `{ripe}`:
 
 ### Base `R`
 
+#### Replicate
+
 ```{r example}
 library(ripe)
 
@@ -50,8 +52,31 @@ stats::runif(20)%>%
 
 ```
  
-### tidy
+#### apply
+
+```{r}
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripely(lapply, X=1:4)
+```
+
+#### mclapply 
+
+```{r}
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripely(
+    parallel::mclapply,
+    X=1:4,
+    mc.cores = parallel::detectCores()-1)
+```
  
+### tidy
+
+#### purrr
+
 ```{r}
 iris %>% 
   dplyr::sample_n(5) %>% 
