@@ -16,23 +16,40 @@
 #'  \code{\link[purrr]{rerun}}
 #' @rdname ripe
 #' @export 
-ripe <- function(x,f,...){
-  cp <- chain_parts(x)
+ripe <- function(x, f, ...){
+  
   
   fname <- deparse(substitute(f))
-  
+
+  f_ <- lazy(x)
+    
   if(grepl('apply$',fname)){
     
-    fapply_ <- function(x){pipe_(cp)}
-    
-    f(FUN=fapply_,...)
+    f(FUN=f_,...)
     
   }else{
-    
-    f_ <- function(){pipe_(cp)}
     
     f(f_(),...)  
     
   }
+  
+}
+
+#' @title Convert magrittr chain lazy function
+#' @description Input a chain in magrittr syntax and make it a lazyeval function.
+#' @param x magrittr chain of functions
+#' @return function
+#' @examples 
+#' f <- stats::runif(20)%>%sample(10)%>%lazy()
+#' 
+#' f()
+#' @rdname lazy
+#' @export 
+
+lazy <- function(x){
+  
+  cp <- chain_parts(x)
+  
+  function(x){pipe_(cp)}
   
 }

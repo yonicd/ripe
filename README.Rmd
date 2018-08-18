@@ -13,13 +13,13 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "README-"
 )
+
+library(ripe)
 ```
 
 # ripe
 
-The goal of ripe is to rerun {magrittr} pipes using a pipe!
-
-Take any {magrittr} chain add `ripe()` and rerun it lazily using your favorite replication function. 
+The goal of ripe is to create a more flexible way to rerun {magrittr} pipes.
 
 ## Installation
 
@@ -27,13 +27,47 @@ Take any {magrittr} chain add `ripe()` and rerun it lazily using your favorite r
 remotes::install_github('yonicd/ripe')
 ```
 
-## Example
 
-This is a basic example which shows you how to use `{ripe}`:
+## WTAF
 
-### Base `R`
+We want to write the following in a shorter and more flexible way
 
-#### Replicate
+```{r,eval=FALSE}
+
+f <- function(){
+  
+  stats::runif(20)%>%
+    sample(10)%>%
+    utils::head(5)
+}
+
+replicate(n=3,f(),simplify = FALSE)
+
+```
+
+This is better!
+
+```{r,eval=FALSE}
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripe(replicate,n=4,simplify=FALSE)
+```
+
+We can now manipulate the chain or move `ripe` around into different subsets of the chain, creating iterative replication workflows.
+
+```{r,eval=FALSE}
+
+stats::runif(20)%>%
+  #sample(10)%>%
+  utils::head(5)%>%
+  ripe(replicate,n=4,simplify=FALSE)
+  
+```
+
+## Examples
+
+<details><summary> <code>replicate</code> </summary>
 
 ```{r example}
 library(ripe)
@@ -51,8 +85,10 @@ stats::runif(20)%>%
   ripe(replicate,n=4,simplify=FALSE)
 
 ```
+
+</details>
  
-#### apply
+<details><summary> <code>apply</code> </summary>
 
 ```{r}
 stats::runif(20)%>%
@@ -61,7 +97,9 @@ stats::runif(20)%>%
   ripe(lapply, X=1:4)
 ```
 
-#### mclapply 
+</details>
+ 
+<details><summary> <code>mclapply</code> </summary>
 
 ```{r}
 stats::runif(20)%>%
@@ -72,10 +110,10 @@ stats::runif(20)%>%
     X=1:4,
     mc.cores = parallel::detectCores()-1)
 ```
- 
-### tidy
 
-#### purrr
+</details>
+
+<details><summary> <code>purrr</code> </summary>
 
 ```{r}
 iris %>% 
@@ -92,4 +130,20 @@ iris %>%
   dplyr::sample_n(20) %>% 
   dplyr::slice(1:5) %>%
   ripe(purrr::rerun,.n=3)
+```
+
+</details>
+
+## Convert Chain to Lazy
+
+You can also quickly convert the chain to a lazyeval function
+
+```{r}
+f <- stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  lazy()
+
+f()
+f()
 ```
