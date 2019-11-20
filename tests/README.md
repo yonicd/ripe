@@ -1,6 +1,6 @@
 Tests and Coverage
 ================
-20 November, 2019 06:12:08
+20 November, 2019 06:26:30
 
   - [Coverage](#coverage)
   - [Unit Tests](#unit-tests)
@@ -31,7 +31,7 @@ package.
 
 | file                                | n |  time | error | failed | skipped | warning |
 | :---------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| [test-ripe.R](testthat/test-ripe.R) | 5 | 0.013 |     0 |      0 |       0 |       0 |
+| [test-ripe.R](testthat/test-ripe.R) | 5 | 0.014 |     0 |      0 |       0 |       0 |
 
 <details closed>
 
@@ -40,7 +40,7 @@ package.
 
 | file                                    | context             | test                      | status | n |  time |
 | :-------------------------------------- | :------------------ | :------------------------ | :----- | -: | ----: |
-| [test-ripe.R](testthat/test-ripe.R#L6)  | basic functionality | ripe: rerun once          | PASS   | 1 | 0.004 |
+| [test-ripe.R](testthat/test-ripe.R#L6)  | basic functionality | ripe: rerun once          | PASS   | 1 | 0.005 |
 | [test-ripe.R](testthat/test-ripe.R#L10) | basic functionality | ripe: rerun more thanonce | PASS   | 1 | 0.003 |
 | [test-ripe.R](testthat/test-ripe.R#L14) | basic functionality | ripe: rerun apply         | PASS   | 1 | 0.004 |
 | [test-ripe.R](testthat/test-ripe.R#L26) | basic functionality | lazy: class               | PASS   | 1 | 0.001 |
