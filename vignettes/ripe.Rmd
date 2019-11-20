@@ -1,0 +1,77 @@
+---
+title: "Using Ripe"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using Ripe}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(ripe)
+```
+
+## replicate
+
+```{r example}
+
+stats::runif(20)%>%
+  ripe(replicate,n=2,simplify=FALSE)
+
+stats::runif(20)%>%
+  sample(10)%>%
+  ripe(replicate,n=3,simplify=FALSE)
+
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripe(replicate,n=4,simplify=FALSE)
+
+```
+
+## apply
+
+```{r}
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripe(lapply, X=1:4)
+```
+ 
+## mclapply
+
+```{r}
+stats::runif(20)%>%
+  sample(10)%>%
+  utils::head(5)%>%
+  ripe(
+    parallel::mclapply,
+    X=1:4,
+    mc.cores = 2)
+```
+
+## purrr
+
+```{r}
+iris %>% 
+  dplyr::sample_n(5) %>% 
+  ripe(purrr::rerun,.n=3)
+
+iris %>% 
+  dplyr::select(1:2) %>% 
+  dplyr::sample_n(20) %>% 
+  ripe(purrr::rerun,.n=1)
+
+iris %>% 
+  dplyr::select(1:2)%>% 
+  dplyr::sample_n(20) %>% 
+  dplyr::slice(1:5) %>%
+  ripe(purrr::rerun,.n=3)
+```

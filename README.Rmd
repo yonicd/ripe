@@ -5,7 +5,10 @@ always_allow_html: yes
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/ripe.svg?branch=master)](https://travis-ci.org/yonicd/ripe)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&svg=true)](https://ci.appveyor.com/project/yonicd/ripe)
+<!-- badges: end -->
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
@@ -28,11 +31,11 @@ remotes::install_github('yonicd/ripe')
 ```
 
 
-## WTAF
+## In the Tin
 
 We want to write the following in a shorter and more flexible way
 
-```{r,eval=FALSE}
+```{r}
 
 f <- function(){
   
@@ -47,7 +50,7 @@ replicate(n=3,f(),simplify = FALSE)
 
 This is better!
 
-```{r,eval=FALSE}
+```{r}
 stats::runif(20)%>%
   sample(10)%>%
   utils::head(5)%>%
@@ -56,7 +59,7 @@ stats::runif(20)%>%
 
 We can now manipulate the chain or move `ripe` around into different subsets of the chain, creating iterative replication workflows.
 
-```{r,eval=FALSE}
+```{r}
 
 stats::runif(20)%>%
   #sample(10)%>%
@@ -64,75 +67,6 @@ stats::runif(20)%>%
   ripe(replicate,n=4,simplify=FALSE)
   
 ```
-
-## Examples
-
-<details><summary> <code>replicate</code> </summary>
-
-```{r example}
-library(ripe)
-
-stats::runif(20)%>%
-  ripe(replicate,n=2,simplify=FALSE)
-
-stats::runif(20)%>%
-  sample(10)%>%
-  ripe(replicate,n=3,simplify=FALSE)
-
-stats::runif(20)%>%
-  sample(10)%>%
-  utils::head(5)%>%
-  ripe(replicate,n=4,simplify=FALSE)
-
-```
-
-</details>
- 
-<details><summary> <code>apply</code> </summary>
-
-```{r}
-stats::runif(20)%>%
-  sample(10)%>%
-  utils::head(5)%>%
-  ripe(lapply, X=1:4)
-```
-
-</details>
- 
-<details><summary> <code>mclapply</code> </summary>
-
-```{r}
-stats::runif(20)%>%
-  sample(10)%>%
-  utils::head(5)%>%
-  ripe(
-    parallel::mclapply,
-    X=1:4,
-    mc.cores = parallel::detectCores()-1)
-```
-
-</details>
-
-<details><summary> <code>purrr</code> </summary>
-
-```{r}
-iris %>% 
-  dplyr::sample_n(5) %>% 
-  ripe(purrr::rerun,.n=3)
-
-iris %>% 
-  dplyr::select(1:2) %>% 
-  dplyr::sample_n(20) %>% 
-  ripe(purrr::rerun,.n=1)
-
-iris %>% 
-  dplyr::select(1:2)%>% 
-  dplyr::sample_n(20) %>% 
-  dplyr::slice(1:5) %>%
-  ripe(purrr::rerun,.n=3)
-```
-
-</details>
 
 ## Convert Chain to Lazy
 

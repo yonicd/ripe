@@ -1,0 +1,27 @@
+title: ripe
+
+destination: docs
+
+development:
+  mode: auto
+
+navbar:
+  structure:
+    left:  [home, reference, articleindex, news]
+    right: [github, twitter]
+  components:
+    articles: ~
+    articleindex:
+      text: Articles
+      href: articles/index.html
+    twitter:
+      icon: fa-lg fa-twitter
+      href: http://twitter.com/yoniceedee
+reference:
+  - title: "Core Functions"
+    contents:
+      - has_concept("ripe")
+articles:
+  - title: "Usage"
+    contents:
+      - ripe

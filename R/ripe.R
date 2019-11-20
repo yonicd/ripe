@@ -15,6 +15,7 @@
 #' @seealso 
 #'  \code{\link[purrr]{rerun}}
 #' @rdname ripe
+#' @family ripe
 #' @export 
 ripe <- function(x, f, ...){
   
@@ -45,7 +46,7 @@ ripe <- function(x, f, ...){
 #' f()
 #' @rdname lazy
 #' @export 
-
+#' @family ripe
 lazy <- function(x){
   
   cp <- chain_parts(x)
