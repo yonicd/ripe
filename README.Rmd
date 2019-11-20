@@ -71,7 +71,7 @@ stats::runif(20)%>%
   
 ```
 
-## Convert Chain to Lazy
+## Convert Chains to Lazy Functions
 
 You can also quickly convert the chain to a lazyeval function
 
