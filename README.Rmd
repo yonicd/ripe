@@ -31,7 +31,7 @@ remotes::install_github('yonicd/ripe')
 ```
 
 
-## In the Tin
+## Goal 
 
 We want to write the following in a shorter and more flexible way
 
@@ -48,7 +48,7 @@ replicate(n=3,f(),simplify = FALSE)
 
 ```
 
-This is better!
+## This is better!
 
 ```{r}
 stats::runif(20)%>%
@@ -56,6 +56,8 @@ stats::runif(20)%>%
   utils::head(5)%>%
   ripe(replicate,n=4,simplify=FALSE)
 ```
+
+## Manipulate Chain Replicates
 
 We can now manipulate the chain or move `ripe` around into different subsets of the chain, creating iterative replication workflows.
 

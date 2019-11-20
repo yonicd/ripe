@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ripe</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.1</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -54,6 +54,12 @@
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/yonicd/ripe">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
 <li>
   <a href="http://twitter.com/yoniceedee">
     <span class="fa fa-lg fa-twitter"></span>
@@ -87,9 +93,9 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">'yonicd/ripe'</span>)</a></code></pre></div>
 </div>
-<div id="in-the-tin" class="section level2">
+<div id="goal" class="section level2">
 <h2 class="hasAnchor">
-<a href="#in-the-tin" class="anchor"></a>In the Tin</h2>
+<a href="#goal" class="anchor"></a>Goal</h2>
 <p>We want to write the following in a shorter and more flexible way</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"></a>
 <a class="sourceLine" id="cb2-2" title="2">f &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
@@ -101,29 +107,36 @@
 <a class="sourceLine" id="cb2-8" title="8"></a>
 <a class="sourceLine" id="cb2-9" title="9"><span class="kw">replicate</span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; [1] 0.2969829 0.1243062 0.4403568 0.6167952 0.7215195</span></a>
+<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; [1] 0.8002557 0.4751122 0.2201699 0.9217119 0.8843756</span></a>
 <a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; [1] 0.38550178 0.04466409 0.81935929 0.28966119 0.64672908</span></a>
+<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; [1] 0.9231412 0.2913262 0.1899650 0.3964992 0.6789112</span></a>
 <a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; [1] 0.10722894 0.12741754 0.46395361 0.06905468 0.19391423</span></a></code></pre></div>
-<p>This is better!</p>
+<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; [1] 0.5743133 0.8919166 0.1333068 0.9736342 0.7949436</span></a></code></pre></div>
+</div>
+<div id="this-is-better" class="section level2">
+<h2 class="hasAnchor">
+<a href="#this-is-better" class="anchor"></a>This is better!</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-2" title="2"><span class="st">  </span><span class="kw">sample</span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-4" title="4"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; [1] 0.1622876 0.9926546 0.9557322 0.8912337 0.3361872</span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; [1] 0.13442758 0.05091904 0.54674572 0.84051403 0.24511144</span></a>
 <a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; [1] 0.4031698 0.5532961 0.5617824 0.6057913 0.2282068</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; [1] 0.7593286 0.5736068 0.5598740 0.1901749 0.9960589</span></a>
 <a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-11" title="11"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; [1] 0.3913616 0.8593466 0.6869033 0.9071998 0.4907069</span></a>
+<a class="sourceLine" id="cb3-12" title="12"><span class="co">#&gt; [1] 0.60066821 0.38276844 0.80535838 0.04362504 0.14055155</span></a>
 <a class="sourceLine" id="cb3-13" title="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-14" title="14"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; [1] 0.73817925 0.11548161 0.82381789 0.15830605 0.01142482</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" title="15"><span class="co">#&gt; [1] 0.5235122 0.4969701 0.7102464 0.6979855 0.2676185</span></a></code></pre></div>
+</div>
+<div id="manipulate-chain-replicates" class="section level2">
+<h2 class="hasAnchor">
+<a href="#manipulate-chain-replicates" class="anchor"></a>Manipulate Chain Replicates</h2>
 <p>We can now manipulate the chain or move <code>ripe</code> around into different subsets of the chain, creating iterative replication workflows.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"></a>
 <a class="sourceLine" id="cb4-2" title="2">stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
@@ -131,16 +144,16 @@
 <a class="sourceLine" id="cb4-4" title="4"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-5" title="5"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-6" title="6"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; [1] 0.245129237 0.399509277 0.585603117 0.009203321 0.245852565</span></a>
+<a class="sourceLine" id="cb4-7" title="7"><span class="co">#&gt; [1] 0.07197262 0.49673030 0.51796618 0.90701614 0.25529426</span></a>
 <a class="sourceLine" id="cb4-8" title="8"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; [1] 0.3426664 0.4795897 0.5836280 0.1156120 0.2570647</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="co">#&gt; [1] 0.04013945 0.03520064 0.78725533 0.71588967 0.31502794</span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-12" title="12"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; [1] 0.734939604 0.002887668 0.982040862 0.250753757 0.030303089</span></a>
+<a class="sourceLine" id="cb4-13" title="13"><span class="co">#&gt; [1] 0.8086515 0.6695524 0.9948631 0.1883586 0.5645010</span></a>
 <a class="sourceLine" id="cb4-14" title="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-15" title="15"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [1] 0.70669543 0.96574335 0.03293389 0.94411744 0.29297637</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-16" title="16"><span class="co">#&gt; [1] 0.6624472 0.1263084 0.1482204 0.3609371 0.9590423</span></a></code></pre></div>
 </div>
 <div id="convert-chain-to-lazy" class="section level2">
 <h2 class="hasAnchor">
@@ -152,9 +165,9 @@
 <a class="sourceLine" id="cb5-4" title="4"><span class="st">  </span><span class="kw"><a href="reference/lazy.html">lazy</a></span>()</a>
 <a class="sourceLine" id="cb5-5" title="5"></a>
 <a class="sourceLine" id="cb5-6" title="6"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; [1] 0.6106863 0.6084959 0.2542616 0.4270936 0.6045709</span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; [1] 0.8627660 0.2968800 0.1694841 0.7943510 0.7635527</span></a>
 <a class="sourceLine" id="cb5-8" title="8"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; [1] 0.06104729 0.98639578 0.48308839 0.51343171 0.46230522</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-9" title="9"><span class="co">#&gt; [1] 0.86146605 0.72485326 0.58737354 0.55864671 0.01810526</span></a></code></pre></div>
 </div>
 </div>
   </div>
@@ -163,7 +176,9 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
-<li>Report a bug at <br><a href="NA">NA</a>
+<li>Browse source code at <br><a href="https://github.com/yonicd/ripe">https://​github.com/​yonicd/​ripe</a>
+</li>
+<li>Report a bug at <br><a href="https://github.com/yonicd/ripe/issues">https://​github.com/​yonicd/​ripe/​issues</a>
 </li>
 </ul>
 </div>
