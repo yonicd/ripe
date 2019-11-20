@@ -103,13 +103,13 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.7007931 0.8270890 0.2319819 0.6476640 0.4718875</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.04133141 0.17137966 0.82015480 0.23261987 0.26044634</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.39698407 0.54434698 0.05831948 0.03938388 0.82409276</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.62157825 0.09567650 0.04897866 0.66568715 0.48089530</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.4740344 0.2780477 0.4772075 0.6111966 0.7993007</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.5600308 0.9638376 0.8825783 0.3887679 0.6620655</span></a></code></pre></div>
 </div>
 <div id="this-is-better" class="section level2">
 <h2 class="hasAnchor">
@@ -119,16 +119,16 @@
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">ripe</span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.3280992 0.9755997 0.4630788 0.3417383 0.7335484</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.44569696 0.56891227 0.05746438 0.74083185 0.11390839</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.4337700 0.5945014 0.5154666 0.6110755 0.2563256</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.25011961 0.08995676 0.99009074 0.37407570 0.26222560</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.00741089 0.76272490 0.38387502 0.79113103 0.93745556</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.152290092 0.461730018 0.706700897 0.001485429 0.160923742</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.5254051 0.4799984 0.3597678 0.5442750 0.1054646</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.7128270 0.2601389 0.7007489 0.5550923 0.6739421</span></a></code></pre></div>
 </div>
 <div id="manipulate-chain-replicates" class="section level2">
 <h2 class="hasAnchor">
@@ -140,16 +140,16 @@
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw">ripe</span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.88427737 0.03443941 0.41760083 0.02225060 0.21407943</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.6429601 0.9930065 0.1935061 0.7401675 0.9792223</span></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.3901295 0.9204405 0.1552977 0.1178061 0.1973348</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.6591254 0.4737102 0.4134716 0.9947767 0.3702785</span></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.04120516 0.15025562 0.98000486 0.35402538 0.84813806</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.1280826 0.9950717 0.4523734 0.6424192 0.8375788</span></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.6118101 0.3585138 0.7631173 0.6883277 0.3629025</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.4049065 0.6493410 0.9514146 0.6628311 0.7660370</span></a></code></pre></div>
 </div>
 <div id="convert-chain-to-lazy" class="section level2">
 <h2 class="hasAnchor">
@@ -161,9 +161,9 @@
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">lazy</span>()</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.6323848 0.3859844 0.3235282 0.4981219 0.6913391</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.6418508 0.8929590 0.4753697 0.8075399 0.9526340</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.8104247 0.4129851 0.2644532 0.6501891 0.7640080</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.4713472 0.5042914 0.6246495 0.1494749 0.3800630</span></a></code></pre></div>
 </div>
 </div>
 
@@ -199,7 +199,7 @@
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/yonicd/ripe"><img src="https://travis-ci.org/yonicd/ripe.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/yonicd/ripe"><img src="https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="http://tinyurl.com/vzcsnsa"><img src="covrpage-Last_Build_2019_11_20-brightgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="http://tinyurl.com/vzcsnsa"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg" alt="Covrpage Summary"></a></li>
 </ul>
 </div>
 </div>
