@@ -6,20 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Replicate magrittr chains • ripe</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.1/clipboard.min.js" integrity="sha256-hIvIxeqhGZF+VVeM55k0mJvWpQ6gTkWk3Emc+NmowYA=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Replicate magrittr chains">
 <meta property="og:description" content="Replicate magrittr chains directly at the end of the chain.">
 <meta name="twitter:card" content="summary">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
+<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">ripe</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -56,7 +56,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/yonicd/ripe">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fa fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -75,20 +75,23 @@
 <!--/.navbar -->
 
       
-
       </header><div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
+    
 
+    
+    
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- badges: start -->
 
 <div id="ripe" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#ripe" class="anchor"></a>ripe <img src="https://github.com/yonicd/ripe/raw/master/input/logo.png" align="right">
-</h1></div>
+<a href="#ripe" class="anchor"></a>ripe</h1></div>
 <p>The goal of ripe is to create a more flexible way to rerun {magrittr} pipes.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">'yonicd/ripe'</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">remotes<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">'yonicd/ripe'</span>)</a></code></pre></div>
 </div>
 <div id="goal" class="section level2">
 <h2 class="hasAnchor">
@@ -97,81 +100,86 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"></a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">f &lt;-<span class="st"> </span><span class="cf">function</span>(){</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3">  </a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">  stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">    </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="st">    </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="st">    </span><span class="kw">sample</span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="st">    </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)</a>
 <a class="sourceLine" id="cb2-7" data-line-number="7">}</a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">replicate</span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.06022373 0.12728522 0.11150625 0.25158204 0.58905788</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.7597861 0.6900691 0.6002197 0.1192226 0.3555602</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.1072398 0.7134321 0.3498681 0.2374182 0.4419980</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.1832066 0.2396549 0.1332134 0.4384198 0.6737907</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.4725874 0.4178627 0.1098458 0.8701580 0.8360550</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.7479644 0.1039176 0.9291691 0.7845107 0.2970455</span></a></code></pre></div>
 </div>
 <div id="this-is-better" class="section level2">
 <h2 class="hasAnchor">
 <a href="#this-is-better" class="anchor"></a>This is better!</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw">ripe</span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="st">  </span><span class="kw">sample</span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.1156590 0.4126643 0.7622485 0.9492387 0.9783486</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.047568259 0.009610982 0.485226968 0.264670654 0.159910736</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.35866078 0.07050582 0.67521232 0.38224314 0.33469316</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.597557919 0.002913245 0.123754701 0.762221025 0.207973124</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.2419512 0.1423194 0.5818525 0.7163488 0.8450543</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.9642738 0.1708015 0.5218983 0.3227016 0.9399461</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.41080682 0.38536747 0.94532108 0.08396205 0.24204844</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.4532350 0.3966742 0.0716835 0.9624202 0.6309057</span></a></code></pre></div>
 </div>
 <div id="manipulate-chain-replicates" class="section level2">
 <h2 class="hasAnchor">
 <a href="#manipulate-chain-replicates" class="anchor"></a>Manipulate Chain Replicates</h2>
 <p>We can now manipulate the chain or move <code>ripe</code> around into different subsets of the chain, creating iterative replication workflows.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="st">  </span><span class="co">#sample(10)%&gt;%</span></a>
-<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw">ripe</span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.2314191 0.5428888 0.1630212 0.7682106 0.7922107</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.1269561 0.9037062 0.8656164 0.6860040 0.7718242</span></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.5649696 0.7291185 0.4307413 0.1367933 0.1816979</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.24058149 0.47230597 0.97422795 0.01048445 0.53394971</span></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.8692706 0.8004550 0.8248950 0.1874990 0.7741495</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.1726116 0.1512779 0.4370591 0.8770037 0.3560740</span></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.2510581 0.8959941 0.8004985 0.7745013 0.5329853</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.8110429 0.2801888 0.9517881 0.7308922 0.1690710</span></a></code></pre></div>
 </div>
 <div id="convert-chains-to-lazy-functions" class="section level2">
 <h2 class="hasAnchor">
 <a href="#convert-chains-to-lazy-functions" class="anchor"></a>Convert Chains to Lazy Functions</h2>
 <p>You can also quickly convert the chain to a lazyeval function</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">f &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw">lazy</span>()</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">f &lt;-<span class="st"> </span>stats<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/stats/topics/Uniform">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">  </span><span class="kw">sample</span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="reference/lazy.html">lazy</a></span>()</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.2935211 0.2272908 0.6266707 0.8076775 0.5424035</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.15057076 0.06859179 0.41652781 0.99946027 0.69793552</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.76013697 0.79892579 0.46391426 0.09685366 0.41842359</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.05353205 0.25852563 0.81598395 0.30461210 0.73838732</span></a></code></pre></div>
 </div>
 </div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div class="links">
+    <div class="">
+<h2></h2>
+<ul class="list-unstyled">
+<li><img src="https://github.com/yonicd/ripe/blob/master/input/logo.png?raw=true" alt=""></li>
+</ul>
+</div>
+<div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
 <li>Browse source code at <br><a href="https://github.com/yonicd/ripe">https://​github.com/​yonicd/​ripe</a>
@@ -195,15 +203,17 @@
 </ul>
 </div>
 
-  <div class="dev-status">
+
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://travis-ci.org/yonicd/ripe"><img src="https://travis-ci.org/yonicd/ripe.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/yonicd/ripe"><img src="https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="http://tinyurl.com/vzcsnsa"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="http://tinyurl.com/vzcsnsa"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_11_21-brightgreen.svg" alt="Covrpage Summary"></a></li>
 </ul>
 </div>
 </div>
+
 </div>
 
 
@@ -212,14 +222,13 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="http://pkgdown.r-lib.org/">pkgdown</a>.</p>
 </div>
 
       </footer>
 </div>
 
   
-
 
   </body>
 </html>
