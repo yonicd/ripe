@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 library(ripe)
 ```
 
-# ripe
+# ripe `r if(knitr::opts_knit$get('rmarkdown.pandoc.to')=='gfm-ascii_identifiers') '<img src="https://github.com/yonicd/ripe/raw/master/input/logo.png" align="right" />'`
 
 The goal of ripe is to create a more flexible way to rerun {magrittr} pipes.
 
