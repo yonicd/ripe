@@ -3,7 +3,7 @@ sudo: false
 cache: packages
 r_github_packages: 
 - metrumresearchgroup/covrpage   
-- r-lib/pkgdown
+- metrumresearchgroup/pkgdown
 after_success:
 - Rscript -e 'covr::codecov()'
 - Rscript -e 'devtools::install(); covrpage::covrpage_ci()'
