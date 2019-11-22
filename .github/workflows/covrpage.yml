@@ -2,7 +2,7 @@ on:
   push:
     branches: master
 
-name: Pkgdown
+name: Covrpage
 
 jobs:
   pkgdown:
