@@ -107,13 +107,13 @@
 <a class="sourceLine" id="cb2-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="kw">replicate</span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.4240214 0.2745700 0.4543928 0.3792786 0.2471127</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt; [1] 0.5747639 0.7040373 0.5964108 0.8993456 0.7522187</span></a>
 <a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.3419032 0.3441362 0.7081531 0.9234998 0.7269578</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt; [1] 0.7529530 0.1336368 0.1003604 0.1526139 0.4917670</span></a>
 <a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.1947094 0.9517931 0.9441753 0.3943814 0.3944650</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [1] 0.5366469 0.4669536 0.5762339 0.9612098 0.7701668</span></a></code></pre></div>
 </div>
 <div id="this-is-better" class="section level2">
 <h2 class="hasAnchor">
@@ -123,16 +123,16 @@
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.3825705 0.1289949 0.9631644 0.7037987 0.2910337</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt; [1] 0.44822315 0.13741548 0.98293372 0.04650305 0.29570791</span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.8243449 0.3993098 0.4547198 0.2947031 0.5900283</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; [1] 0.1803248 0.2939185 0.4185058 0.9030274 0.7153130</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.1675309 0.1565270 0.3029086 0.8722143 0.4422438</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt; [1] 0.1070593 0.2182206 0.6556272 0.1253804 0.6486398</span></a>
 <a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.6694825 0.4847816 0.8068932 0.6159131 0.4445155</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; [1] 0.61283017 0.02082115 0.97861122 0.65489070 0.81735870</span></a></code></pre></div>
 </div>
 <div id="manipulate-chain-replicates" class="section level2">
 <h2 class="hasAnchor">
@@ -144,16 +144,16 @@
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</a>
 <a class="sourceLine" id="cb4-6" data-line-number="6"><span class="co">#&gt; [[1]]</span></a>
-<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.53016600 0.09563218 0.81051636 0.72027387 0.31559904</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="co">#&gt; [1] 0.04904029 0.64358548 0.12944080 0.80295710 0.74486951</span></a>
 <a class="sourceLine" id="cb4-8" data-line-number="8"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-9" data-line-number="9"><span class="co">#&gt; [[2]]</span></a>
-<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.6295165 0.1954431 0.4800415 0.9312024 0.7213089</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="co">#&gt; [1] 0.7405576 0.2790576 0.5282684 0.2157650 0.5402500</span></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; [[3]]</span></a>
-<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.1897911 0.7160680 0.9651193 0.2233232 0.9213822</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; [1] 0.6316435 0.8596146 0.1847616 0.0726848 0.1483046</span></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt; </span></a>
 <a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [[4]]</span></a>
-<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.24887231 0.71280789 0.02224983 0.53045469 0.66554914</span></a></code></pre></div>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [1] 0.3218298 0.8713249 0.7328600 0.2067590 0.1470485</span></a></code></pre></div>
 </div>
 <div id="convert-chains-to-lazy-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -165,9 +165,9 @@
 <a class="sourceLine" id="cb5-4" data-line-number="4"><span class="st">  </span><span class="kw"><a href="reference/lazy.html">lazy</a></span>()</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb5-6" data-line-number="6"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.8514164 0.4846704 0.3137412 0.9941576 0.6488669</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt; [1] 0.9092449 0.9130118 0.3780465 0.7368007 0.4656050</span></a>
 <a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.268169955 0.311270553 0.002149459 0.127084501 0.064591730</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="co">#&gt; [1] 0.9885753 0.2708477 0.5851867 0.3056696 0.3431382</span></a></code></pre></div>
 </div>
 </div>
   </div>
