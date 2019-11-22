@@ -6,6 +6,7 @@ always_allow_html: yes
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- badges: start -->
+[![R build status](https://github.com/yonicd/ripe/workflows/R-CMD-check/badge.svg)](https://github.com/yonicd/ripe/actions?workflow=R-CMD-check)
 [![Travis-CI Build Status](https://travis-ci.org/yonicd/ripe.svg?branch=master)](https://travis-ci.org/yonicd/ripe)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&svg=true)](https://ci.appveyor.com/project/yonicd/ripe)
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
