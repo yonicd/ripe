@@ -14,7 +14,7 @@ jobs:
       - name: Install dependencies
         run: |
           Rscript -e 'install.packages("remotes")' \
-                  -e 'remotes::install_github(metrumresearchgroup/covrpage)' \
+                  -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
                   -e 'remotes::install_deps(dependencies = TRUE)'
       - name: Install package
         run: R CMD INSTALL .
