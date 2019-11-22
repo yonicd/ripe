@@ -21,5 +21,8 @@ jobs:
         run: R CMD INSTALL .
       - name: coverpage
         run: |
-          Rscript -e 'covrpage::covrpage_ci()' \
+          Rscript -e 'covrpage::covrpage_ci()'
+      - name: pkgdown
+        run: |
+          Rscript -e 'pkgdown::build_site()' \
           Rscript -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git')"
