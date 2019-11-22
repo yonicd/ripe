@@ -1,6 +1,6 @@
-pandoc: 2.7.3
-pkgdown: 1.4.1.9000
-pkgdown_sha: 732fb5b9ccc0ef87a73dfd0772ae661a4039b2a8
+pandoc: '2.2'
+pkgdown: 1.1.0.9000
+pkgdown_sha: a5af998a70078bf67fc2da191d706582a6c24126
 articles:
   ripe: ripe.html
   tests_and_coverage: tests_and_coverage.html
