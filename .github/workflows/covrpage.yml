@@ -13,10 +13,12 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@master
       - name: Install dependencies
         run: |
-          Rscript -e 'install.packages("remotes")' \
+          Rscript -e 'install.packages("remotes","rcmdcheck")' \
                   -e 'remotes::install_deps(dependencies = TRUE)' \
                   -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
                   -e 'remotes::install_github("metrumresearchgroup/pkgdown")'
+      - name: Check
+        run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
       - name: Install package
         run: R CMD INSTALL .
       - name: coverpage
