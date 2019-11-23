@@ -48,13 +48,14 @@ stats::runif(20)%>%
 ## mclapply
 
 ```{r}
+(ncores <- parallel::detectCores())
+```
+ 
+```{r}
 stats::runif(20)%>%
   sample(10)%>%
   utils::head(5)%>%
-  ripe(
-    parallel::mclapply,
-    X=1:4,
-    mc.cores = 2)
+  ripe(parallel::mclapply, X=1:4, mc.cores = pmin(1,ncores-1))
 ```
 
 ## purrr
