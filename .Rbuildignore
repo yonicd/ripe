@@ -10,3 +10,4 @@
 ^pkgdown$
 ^input$
 ^\.github$
+^codecov\.yml$
