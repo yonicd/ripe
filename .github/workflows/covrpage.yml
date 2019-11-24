@@ -2,10 +2,10 @@ on:
   push:
     branches: master
 
-name: Covrpage
+name: covrpage
 
 jobs:
-  pkgdown:
+  check:
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@master
@@ -15,15 +15,31 @@ jobs:
         run: |
           Rscript -e 'install.packages(c("remotes","rcmdcheck"))' \
                   -e 'remotes::install_deps(dependencies = TRUE)' \
-                  -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
-                  -e 'remotes::install_github("metrumresearchgroup/pkgdown")'
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
-      - name: Install package
-        run: R CMD INSTALL .
-      - name: coverpage
+  coverage:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-pandoc@master
+      - name: Install dependencies
         run: |
+          Rscript -e 'remotes::install_github("r-lib/covr@gh-actions")' \
+          Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage")'
+      - name: cov
+        run: |
+          Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")' \
           Rscript -e 'covrpage::covrpage_ci()'
+  pkgdown:
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-pandoc@master
+      - name: Install dependencies
+        run: |
+          Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")'
       - name: pkgdown
         run: |
           Rscript -e 'pkgdown::build_site()' \
