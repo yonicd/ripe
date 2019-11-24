@@ -3,7 +3,7 @@ on:
     branches: master
 
 name: covrpage
-
+  
 jobs:
   check:
     runs-on: macOS-latest
@@ -14,20 +14,20 @@ jobs:
       - name: Install dependencies
         run: |
           Rscript -e 'install.packages(c("remotes","rcmdcheck"))' \
-                  -e 'remotes::install_deps(dependencies = TRUE)' \
+                  -e 'remotes::install_deps(dependencies = TRUE)'
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
       - name: covr
         run: |
           Rscript -e 'remotes::install_github("r-lib/covr@gh-actions")' \
-          Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")'
+                  -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")'
       - name: Install package
         run: R CMD INSTALL .          
       - name: covrpage
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
-          Rscript -e 'covrpage::covrpage_ci()'          
+                  -e 'covrpage::covrpage_ci()'          
       - name: Deploy package
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")' \
-          Rscript -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git')"          
+                  -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git')"          
