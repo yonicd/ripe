@@ -6,7 +6,6 @@ name: covrpage
 
 jobs:
   check:
-    if: startsWith(github.event.comment.body, '/check')
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@master
@@ -18,32 +17,17 @@ jobs:
                   -e 'remotes::install_deps(dependencies = TRUE)' \
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
-  coverage:
-    if: startsWith(github.event.comment.body, '/coverage')
-    runs-on: macOS-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: r-lib/actions/setup-r@master
-      - uses: r-lib/actions/setup-pandoc@master
-      - name: Install dependencies
+      - name: covr
         run: |
           Rscript -e 'remotes::install_github("r-lib/covr@gh-actions")' \
-          Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage")'
-      - name: cov
+          Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")'
+      - name: Install package
+        run: R CMD INSTALL .          
+      - name: covrpage
         run: |
-          Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")' \
-          Rscript -e 'covrpage::covrpage_ci()'
-  pkgdown:
-    if: startsWith(github.event.comment.body, '/pkgdown')
-    runs-on: macOS-latest
-    steps:
-      - uses: actions/checkout@master
-      - uses: r-lib/actions/setup-r@master
-      - uses: r-lib/actions/setup-pandoc@master
-      - name: Install dependencies
+          Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
+          Rscript -e 'covrpage::covrpage_ci()'          
+      - name: Deploy package
         run: |
-          Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")'
-      - name: pkgdown
-        run: |
-          Rscript -e 'pkgdown::build_site()' \
-          Rscript -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git')"
+          Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")' \
+          Rscript -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git')"          
