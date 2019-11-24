@@ -6,6 +6,7 @@ name: covrpage
 
 jobs:
   check:
+    if: startsWith(github.event.comment.body, '/check')
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@master
@@ -18,6 +19,7 @@ jobs:
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '--no-manual', error_on = 'error')"
   coverage:
+    if: startsWith(github.event.comment.body, '/coverage')
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@master
@@ -32,6 +34,7 @@ jobs:
           Rscript -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")' \
           Rscript -e 'covrpage::covrpage_ci()'
   pkgdown:
+    if: startsWith(github.event.comment.body, '/pkgdown')
     runs-on: macOS-latest
     steps:
       - uses: actions/checkout@master
