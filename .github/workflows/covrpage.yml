@@ -25,7 +25,7 @@ jobs:
         run: R CMD INSTALL .          
       - name: covrpage
         run: |
-          Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage")' \
+          Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage@actions")' \
                   -e 'covrpage::covrpage_ci()'          
       - name: Deploy package
         run: |
