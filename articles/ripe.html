@@ -93,49 +93,50 @@
 <div id="replicate" class="section level2">
 <h2 class="hasAnchor">
 <a href="#replicate" class="anchor"></a>replicate</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">2</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt;  [1] 0.6580194 0.6582192 0.7976436 0.7329475 0.5589133 0.3459145 0.8967751</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt;  [8] 0.6726516 0.3689760 0.8667939 0.5492907 0.2472180 0.4458096 0.6550892</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; [15] 0.7367874 0.1502705 0.3014768 0.8701879 0.5784198 0.3915596</span></span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">2</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">#&gt;  [1] 0.88953932 0.69280341 0.64050681 0.99426978 0.65570580 0.70853047</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">#&gt;  [7] 0.54406602 0.59414202 0.28915974 0.14711365 0.96302423 0.90229905</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">#&gt; [13] 0.69070528 0.79546742 0.02461368 0.47779597 0.75845954 0.21640794</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="co">#&gt; [19] 0.31818101 0.23162579</span></span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="co">#&gt; </span></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt;  [1] 0.4697559 0.3881258 0.1227504 0.5993415 0.4651450 0.8730032 0.5710530</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt;  [8] 0.8961177 0.3911021 0.7655670 0.4581662 0.5609205 0.5664240 0.2344815</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; [15] 0.5694199 0.2803656 0.2066344 0.3138889 0.7553714 0.1228121</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">3</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt;  [1] 0.7317595 0.9268523 0.3123394 0.1082237 0.4957150 0.4313600 0.7964760</span></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#&gt;  [8] 0.0197554 0.1304078 0.5311366</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a><span class="co">#&gt; </span></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a><span class="co">#&gt;  [1] 0.13300812 0.73019529 0.77981194 0.47894000 0.89385819 0.65042833</span></span>
-<span id="cb2-23"><a href="#cb2-23"></a><span class="co">#&gt;  [7] 0.43021364 0.02851658 0.72833789 0.09008646</span></span>
-<span id="cb2-24"><a href="#cb2-24"></a><span class="co">#&gt; </span></span>
-<span id="cb2-25"><a href="#cb2-25"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="co">#&gt;  [1] 0.1236488 0.7541239 0.4011048 0.4296280 0.3583928 0.1594397 0.2354433</span></span>
-<span id="cb2-27"><a href="#cb2-27"></a><span class="co">#&gt;  [8] 0.5751660 0.7167384 0.5743646</span></span>
-<span id="cb2-28"><a href="#cb2-28"></a></span>
-<span id="cb2-29"><a href="#cb2-29"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-30"><a href="#cb2-30"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
-<span id="cb2-33"><a href="#cb2-33"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb2-34"><a href="#cb2-34"></a><span class="co">#&gt; [1] 0.61742627 0.01396389 0.11553556 0.15528335 0.02291784</span></span>
-<span id="cb2-35"><a href="#cb2-35"></a><span class="co">#&gt; </span></span>
-<span id="cb2-36"><a href="#cb2-36"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb2-37"><a href="#cb2-37"></a><span class="co">#&gt; [1] 0.06745082 0.26968465 0.52854133 0.89809145 0.01284611</span></span>
-<span id="cb2-38"><a href="#cb2-38"></a><span class="co">#&gt; </span></span>
-<span id="cb2-39"><a href="#cb2-39"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb2-40"><a href="#cb2-40"></a><span class="co">#&gt; [1] 0.15658091 0.28527186 0.55024392 0.98868420 0.02969739</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a><span class="co">#&gt; </span></span>
-<span id="cb2-42"><a href="#cb2-42"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a><span class="co">#&gt; [1] 0.81250709 0.45541848 0.51646523 0.89160735 0.07511876</span></span></code></pre></div>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt;  [1] 0.14280002 0.41454634 0.41372433 0.36884545 0.15244475 0.13880606</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt;  [7] 0.23303410 0.46596245 0.26597264 0.85782772 0.04583117 0.44220007</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; [13] 0.79892485 0.12189926 0.56094798 0.20653139 0.12753165 0.75330786</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="co">#&gt; [19] 0.89504536 0.37446278</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">3</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="co">#&gt;  [1] 0.60873498 0.78229430 0.94772694 0.59998896 0.06072057 0.93529980</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="co">#&gt;  [7] 0.51150546 0.95447383 0.46677904 0.89035022</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="co">#&gt; </span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="co">#&gt;  [1] 0.24572368 0.84272932 0.23909996 0.31170220 0.82180546 0.01046711</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="co">#&gt;  [7] 0.23116178 0.43943154 0.65983845 0.18384952</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="co">#&gt; </span></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="co">#&gt; [[3]]</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="co">#&gt;  [1] 0.6180179 0.7465680 0.4127461 0.7082903 0.5817501 0.2656867 0.6682846</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="co">#&gt;  [8] 0.6299731 0.4812898 0.2650178</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30"></a>stats<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span>(<span class="dv">20</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/base/sample.html">sample</a></span>(<span class="dv">10</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="co">#&gt; [[1]]</span></span>
+<span id="cb2-35"><a href="#cb2-35"></a><span class="co">#&gt; [1] 0.1716985 0.5468262 0.5930457 0.6330554 0.6623176</span></span>
+<span id="cb2-36"><a href="#cb2-36"></a><span class="co">#&gt; </span></span>
+<span id="cb2-37"><a href="#cb2-37"></a><span class="co">#&gt; [[2]]</span></span>
+<span id="cb2-38"><a href="#cb2-38"></a><span class="co">#&gt; [1] 0.97187564 0.22588643 0.07205712 0.13710608 0.05795856</span></span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="co">#&gt; </span></span>
+<span id="cb2-40"><a href="#cb2-40"></a><span class="co">#&gt; [[3]]</span></span>
+<span id="cb2-41"><a href="#cb2-41"></a><span class="co">#&gt; [1] 0.1566369 0.6301319 0.8028123 0.7790659 0.7293907</span></span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="co">#&gt; </span></span>
+<span id="cb2-43"><a href="#cb2-43"></a><span class="co">#&gt; [[4]]</span></span>
+<span id="cb2-44"><a href="#cb2-44"></a><span class="co">#&gt; [1] 0.5260297 0.1194048 0.5150718 0.9674695 0.4925665</span></span></code></pre></div>
 </div>
 <div id="apply" class="section level2">
 <h2 class="hasAnchor">
@@ -145,16 +146,16 @@
 <span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(lapply, <span class="dt">X=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>)</span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.5336698 0.3079701 0.3390319 0.3519591 0.8476186</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.32172554 0.08250275 0.59626354 0.62625695 0.02799257</span></span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; </span></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.8820399 0.5936892 0.1861717 0.7722062 0.2064730</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.2366197 0.7603995 0.7085741 0.3580570 0.1611658</span></span>
 <span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; </span></span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.55211811 0.31334593 0.19665541 0.96938229 0.03591494</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.11577966 0.21516649 0.09391661 0.67822386 0.68774269</span></span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; </span></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.14874289 0.79818012 0.36325257 0.51048489 0.02547997</span></span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.7358994 0.4547616 0.7702048 0.3956606 0.5039487</span></span></code></pre></div>
 </div>
 <div id="mclapply" class="section level2">
 <h2 class="hasAnchor">
@@ -166,16 +167,16 @@
 <span id="cb5-3"><a href="#cb5-3"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb5-4"><a href="#cb5-4"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(parallel<span class="op">::</span>mclapply, <span class="dt">X=</span><span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, <span class="dt">mc.cores =</span> <span class="kw"><a href="https://rdrr.io/r/base/Extremes.html">pmin</a></span>(<span class="dv">1</span>,ncores<span class="dv">-1</span>))</span>
 <span id="cb5-5"><a href="#cb5-5"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; [1] 0.4981695 0.5486299 0.9275770 0.3360309 0.9657173</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#&gt; [1] 0.87394991 0.15133817 0.01836408 0.94958532 0.41330541</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; </span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.5552493 0.1728305 0.6412821 0.5946682 0.3663691</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.02199372 0.04210805 0.99304478 0.78182307 0.62974542</span></span>
 <span id="cb5-10"><a href="#cb5-10"></a><span class="co">#&gt; </span></span>
 <span id="cb5-11"><a href="#cb5-11"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt; [1] 0.1285639 0.3960908 0.6489113 0.8304915 0.9238021</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="co">#&gt; [1] 0.5029083 0.6145622 0.9091465 0.7456362 0.4757505</span></span>
 <span id="cb5-13"><a href="#cb5-13"></a><span class="co">#&gt; </span></span>
 <span id="cb5-14"><a href="#cb5-14"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#&gt; [1] 0.1542727 0.8306107 0.9543648 0.9804727 0.7278572</span></span></code></pre></div>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="co">#&gt; [1] 0.4204349 0.5395609 0.7337478 0.5223358 0.7147548</span></span></code></pre></div>
 </div>
 <div id="purrr" class="section level2">
 <h2 class="hasAnchor">
@@ -185,27 +186,27 @@
 <span id="cb6-3"><a href="#cb6-3"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(purrr<span class="op">::</span>rerun,<span class="dt">.n=</span><span class="dv">3</span>)</span>
 <span id="cb6-4"><a href="#cb6-4"></a><span class="co">#&gt; [[1]]</span></span>
 <span id="cb6-5"><a href="#cb6-5"></a><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 1          5.1         3.5          1.4         0.2     setosa</span></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 2          6.2         3.4          5.4         2.3  virginica</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 3          5.7         2.8          4.5         1.3 versicolor</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 4          7.7         3.0          6.1         2.3  virginica</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; 5          4.9         2.5          4.5         1.7  virginica</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">#&gt; 1          5.2         2.7          3.9         1.4 versicolor</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="co">#&gt; 2          5.4         3.9          1.3         0.4     setosa</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="co">#&gt; 3          4.6         3.6          1.0         0.2     setosa</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="co">#&gt; 4          5.1         3.8          1.9         0.4     setosa</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="co">#&gt; 5          7.7         3.0          6.1         2.3  virginica</span></span>
 <span id="cb6-11"><a href="#cb6-11"></a><span class="co">#&gt; </span></span>
 <span id="cb6-12"><a href="#cb6-12"></a><span class="co">#&gt; [[2]]</span></span>
 <span id="cb6-13"><a href="#cb6-13"></a><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a><span class="co">#&gt; 1          5.9         3.0          4.2         1.5 versicolor</span></span>
-<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; 2          5.0         3.5          1.3         0.3     setosa</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; 3          6.3         2.5          5.0         1.9  virginica</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt; 4          5.8         2.7          3.9         1.2 versicolor</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; 5          6.0         2.2          5.0         1.5  virginica</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="co">#&gt; 1          6.0         2.9          4.5         1.5 versicolor</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="co">#&gt; 2          5.6         3.0          4.5         1.5 versicolor</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co">#&gt; 3          4.4         3.0          1.3         0.2     setosa</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="co">#&gt; 4          5.2         3.5          1.5         0.2     setosa</span></span>
+<span id="cb6-18"><a href="#cb6-18"></a><span class="co">#&gt; 5          6.7         3.1          4.7         1.5 versicolor</span></span>
 <span id="cb6-19"><a href="#cb6-19"></a><span class="co">#&gt; </span></span>
 <span id="cb6-20"><a href="#cb6-20"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb6-21"><a href="#cb6-21"></a><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species</span></span>
-<span id="cb6-22"><a href="#cb6-22"></a><span class="co">#&gt; 1          5.6         2.5          3.9         1.1 versicolor</span></span>
-<span id="cb6-23"><a href="#cb6-23"></a><span class="co">#&gt; 2          5.8         2.7          4.1         1.0 versicolor</span></span>
-<span id="cb6-24"><a href="#cb6-24"></a><span class="co">#&gt; 3          4.4         3.0          1.3         0.2     setosa</span></span>
-<span id="cb6-25"><a href="#cb6-25"></a><span class="co">#&gt; 4          5.5         2.4          3.7         1.0 versicolor</span></span>
-<span id="cb6-26"><a href="#cb6-26"></a><span class="co">#&gt; 5          6.5         3.0          5.5         1.8  virginica</span></span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="co">#&gt;   Sepal.Length Sepal.Width Petal.Length Petal.Width   Species</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a><span class="co">#&gt; 1          5.8         2.7          5.1         1.9 virginica</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="co">#&gt; 2          6.4         3.1          5.5         1.8 virginica</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="co">#&gt; 3          6.7         2.5          5.8         1.8 virginica</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="co">#&gt; 4          5.9         3.0          5.1         1.8 virginica</span></span>
+<span id="cb6-26"><a href="#cb6-26"></a><span class="co">#&gt; 5          5.0         3.5          1.3         0.3    setosa</span></span>
 <span id="cb6-27"><a href="#cb6-27"></a></span>
 <span id="cb6-28"><a href="#cb6-28"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb6-29"><a href="#cb6-29"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -213,26 +214,26 @@
 <span id="cb6-31"><a href="#cb6-31"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(purrr<span class="op">::</span>rerun,<span class="dt">.n=</span><span class="dv">1</span>)</span>
 <span id="cb6-32"><a href="#cb6-32"></a><span class="co">#&gt; [[1]]</span></span>
 <span id="cb6-33"><a href="#cb6-33"></a><span class="co">#&gt;    Sepal.Length Sepal.Width</span></span>
-<span id="cb6-34"><a href="#cb6-34"></a><span class="co">#&gt; 1           5.5         4.2</span></span>
-<span id="cb6-35"><a href="#cb6-35"></a><span class="co">#&gt; 2           6.5         3.2</span></span>
-<span id="cb6-36"><a href="#cb6-36"></a><span class="co">#&gt; 3           6.7         2.5</span></span>
-<span id="cb6-37"><a href="#cb6-37"></a><span class="co">#&gt; 4           5.7         3.0</span></span>
-<span id="cb6-38"><a href="#cb6-38"></a><span class="co">#&gt; 5           4.4         3.2</span></span>
-<span id="cb6-39"><a href="#cb6-39"></a><span class="co">#&gt; 6           4.8         3.4</span></span>
-<span id="cb6-40"><a href="#cb6-40"></a><span class="co">#&gt; 7           6.2         2.2</span></span>
-<span id="cb6-41"><a href="#cb6-41"></a><span class="co">#&gt; 8           5.8         2.8</span></span>
-<span id="cb6-42"><a href="#cb6-42"></a><span class="co">#&gt; 9           4.4         2.9</span></span>
-<span id="cb6-43"><a href="#cb6-43"></a><span class="co">#&gt; 10          7.9         3.8</span></span>
-<span id="cb6-44"><a href="#cb6-44"></a><span class="co">#&gt; 11          5.1         3.5</span></span>
-<span id="cb6-45"><a href="#cb6-45"></a><span class="co">#&gt; 12          5.7         3.8</span></span>
-<span id="cb6-46"><a href="#cb6-46"></a><span class="co">#&gt; 13          5.1         3.8</span></span>
-<span id="cb6-47"><a href="#cb6-47"></a><span class="co">#&gt; 14          6.3         3.4</span></span>
-<span id="cb6-48"><a href="#cb6-48"></a><span class="co">#&gt; 15          5.8         2.7</span></span>
-<span id="cb6-49"><a href="#cb6-49"></a><span class="co">#&gt; 16          6.0         2.7</span></span>
-<span id="cb6-50"><a href="#cb6-50"></a><span class="co">#&gt; 17          5.5         3.5</span></span>
-<span id="cb6-51"><a href="#cb6-51"></a><span class="co">#&gt; 18          6.5         2.8</span></span>
-<span id="cb6-52"><a href="#cb6-52"></a><span class="co">#&gt; 19          5.4         3.7</span></span>
-<span id="cb6-53"><a href="#cb6-53"></a><span class="co">#&gt; 20          5.2         3.4</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a><span class="co">#&gt; 1           5.1         3.8</span></span>
+<span id="cb6-35"><a href="#cb6-35"></a><span class="co">#&gt; 2           6.6         3.0</span></span>
+<span id="cb6-36"><a href="#cb6-36"></a><span class="co">#&gt; 3           4.8         3.4</span></span>
+<span id="cb6-37"><a href="#cb6-37"></a><span class="co">#&gt; 4           5.5         2.6</span></span>
+<span id="cb6-38"><a href="#cb6-38"></a><span class="co">#&gt; 5           6.7         3.1</span></span>
+<span id="cb6-39"><a href="#cb6-39"></a><span class="co">#&gt; 6           6.4         3.1</span></span>
+<span id="cb6-40"><a href="#cb6-40"></a><span class="co">#&gt; 7           5.0         2.3</span></span>
+<span id="cb6-41"><a href="#cb6-41"></a><span class="co">#&gt; 8           6.2         2.8</span></span>
+<span id="cb6-42"><a href="#cb6-42"></a><span class="co">#&gt; 9           4.8         3.4</span></span>
+<span id="cb6-43"><a href="#cb6-43"></a><span class="co">#&gt; 10          5.0         3.4</span></span>
+<span id="cb6-44"><a href="#cb6-44"></a><span class="co">#&gt; 11          5.9         3.2</span></span>
+<span id="cb6-45"><a href="#cb6-45"></a><span class="co">#&gt; 12          5.8         4.0</span></span>
+<span id="cb6-46"><a href="#cb6-46"></a><span class="co">#&gt; 13          5.8         2.7</span></span>
+<span id="cb6-47"><a href="#cb6-47"></a><span class="co">#&gt; 14          6.7         3.1</span></span>
+<span id="cb6-48"><a href="#cb6-48"></a><span class="co">#&gt; 15          5.6         2.8</span></span>
+<span id="cb6-49"><a href="#cb6-49"></a><span class="co">#&gt; 16          6.3         2.8</span></span>
+<span id="cb6-50"><a href="#cb6-50"></a><span class="co">#&gt; 17          6.9         3.1</span></span>
+<span id="cb6-51"><a href="#cb6-51"></a><span class="co">#&gt; 18          4.6         3.1</span></span>
+<span id="cb6-52"><a href="#cb6-52"></a><span class="co">#&gt; 19          5.5         2.4</span></span>
+<span id="cb6-53"><a href="#cb6-53"></a><span class="co">#&gt; 20          6.7         3.0</span></span>
 <span id="cb6-54"><a href="#cb6-54"></a></span>
 <span id="cb6-55"><a href="#cb6-55"></a>iris <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb6-56"><a href="#cb6-56"></a><span class="st">  </span>dplyr<span class="op">::</span><span class="kw"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>)<span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -241,27 +242,27 @@
 <span id="cb6-59"><a href="#cb6-59"></a><span class="st">  </span><span class="kw"><a href="../reference/ripe.html">ripe</a></span>(purrr<span class="op">::</span>rerun,<span class="dt">.n=</span><span class="dv">3</span>)</span>
 <span id="cb6-60"><a href="#cb6-60"></a><span class="co">#&gt; [[1]]</span></span>
 <span id="cb6-61"><a href="#cb6-61"></a><span class="co">#&gt;   Sepal.Length Sepal.Width</span></span>
-<span id="cb6-62"><a href="#cb6-62"></a><span class="co">#&gt; 1          6.7         3.1</span></span>
-<span id="cb6-63"><a href="#cb6-63"></a><span class="co">#&gt; 2          5.6         3.0</span></span>
-<span id="cb6-64"><a href="#cb6-64"></a><span class="co">#&gt; 3          6.2         2.8</span></span>
-<span id="cb6-65"><a href="#cb6-65"></a><span class="co">#&gt; 4          4.8         3.0</span></span>
-<span id="cb6-66"><a href="#cb6-66"></a><span class="co">#&gt; 5          5.0         3.0</span></span>
+<span id="cb6-62"><a href="#cb6-62"></a><span class="co">#&gt; 1          5.3         3.7</span></span>
+<span id="cb6-63"><a href="#cb6-63"></a><span class="co">#&gt; 2          5.4         3.0</span></span>
+<span id="cb6-64"><a href="#cb6-64"></a><span class="co">#&gt; 3          6.2         2.2</span></span>
+<span id="cb6-65"><a href="#cb6-65"></a><span class="co">#&gt; 4          6.1         2.9</span></span>
+<span id="cb6-66"><a href="#cb6-66"></a><span class="co">#&gt; 5          6.6         3.0</span></span>
 <span id="cb6-67"><a href="#cb6-67"></a><span class="co">#&gt; </span></span>
 <span id="cb6-68"><a href="#cb6-68"></a><span class="co">#&gt; [[2]]</span></span>
 <span id="cb6-69"><a href="#cb6-69"></a><span class="co">#&gt;   Sepal.Length Sepal.Width</span></span>
-<span id="cb6-70"><a href="#cb6-70"></a><span class="co">#&gt; 1          7.9         3.8</span></span>
-<span id="cb6-71"><a href="#cb6-71"></a><span class="co">#&gt; 2          5.2         2.7</span></span>
-<span id="cb6-72"><a href="#cb6-72"></a><span class="co">#&gt; 3          6.7         3.1</span></span>
-<span id="cb6-73"><a href="#cb6-73"></a><span class="co">#&gt; 4          5.7         2.9</span></span>
-<span id="cb6-74"><a href="#cb6-74"></a><span class="co">#&gt; 5          5.0         3.6</span></span>
+<span id="cb6-70"><a href="#cb6-70"></a><span class="co">#&gt; 1          7.3         2.9</span></span>
+<span id="cb6-71"><a href="#cb6-71"></a><span class="co">#&gt; 2          5.6         3.0</span></span>
+<span id="cb6-72"><a href="#cb6-72"></a><span class="co">#&gt; 3          5.0         3.2</span></span>
+<span id="cb6-73"><a href="#cb6-73"></a><span class="co">#&gt; 4          7.4         2.8</span></span>
+<span id="cb6-74"><a href="#cb6-74"></a><span class="co">#&gt; 5          4.6         3.4</span></span>
 <span id="cb6-75"><a href="#cb6-75"></a><span class="co">#&gt; </span></span>
 <span id="cb6-76"><a href="#cb6-76"></a><span class="co">#&gt; [[3]]</span></span>
 <span id="cb6-77"><a href="#cb6-77"></a><span class="co">#&gt;   Sepal.Length Sepal.Width</span></span>
-<span id="cb6-78"><a href="#cb6-78"></a><span class="co">#&gt; 1          6.0         2.2</span></span>
-<span id="cb6-79"><a href="#cb6-79"></a><span class="co">#&gt; 2          6.7         3.1</span></span>
-<span id="cb6-80"><a href="#cb6-80"></a><span class="co">#&gt; 3          6.4         2.8</span></span>
-<span id="cb6-81"><a href="#cb6-81"></a><span class="co">#&gt; 4          5.9         3.2</span></span>
-<span id="cb6-82"><a href="#cb6-82"></a><span class="co">#&gt; 5          6.6         2.9</span></span></code></pre></div>
+<span id="cb6-78"><a href="#cb6-78"></a><span class="co">#&gt; 1          4.8         3.1</span></span>
+<span id="cb6-79"><a href="#cb6-79"></a><span class="co">#&gt; 2          6.1         2.8</span></span>
+<span id="cb6-80"><a href="#cb6-80"></a><span class="co">#&gt; 3          6.6         2.9</span></span>
+<span id="cb6-81"><a href="#cb6-81"></a><span class="co">#&gt; 4          5.1         3.3</span></span>
+<span id="cb6-82"><a href="#cb6-82"></a><span class="co">#&gt; 5          4.9         3.1</span></span></code></pre></div>
 </div>
   </div>
 
