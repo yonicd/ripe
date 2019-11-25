@@ -104,13 +104,13 @@
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="kw"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; [1] 0.77870651 0.01622191 0.25858669 0.79705587 0.61274289</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; [1] 0.3714961 0.5407474 0.8065487 0.1933143 0.1199918</span></span>
 <span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; </span></span>
 <span id="cb2-13"><a href="#cb2-13"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; [1] 0.53410667 0.52584343 0.07213838 0.18082207 0.47036792</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; [1] 0.44786244 0.13658558 0.07942248 0.16672738 0.02999157</span></span>
 <span id="cb2-15"><a href="#cb2-15"></a><span class="co">#&gt; </span></span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; [1] 0.9243600 0.0159918 0.2313428 0.4370554 0.5822927</span></span></code></pre></div>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; [1] 0.3121106 0.3548850 0.1265486 0.3154794 0.8571869</span></span></code></pre></div>
 </div>
 <div id="this-is-better" class="section level2">
 <h2 class="hasAnchor">
@@ -120,16 +120,16 @@
 <span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.5501076 0.4047060 0.3852176 0.7819295 0.5999064</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.7376475 0.4703190 0.6140586 0.4218020 0.2341913</span></span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; </span></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.05141527 0.55401621 0.39686479 0.81535985 0.34293224</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.3655129 0.7818024 0.9263546 0.6880541 0.8825667</span></span>
 <span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; </span></span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.99617554 0.06117587 0.44749287 0.37797706 0.46581316</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.4092424 0.3119513 0.6020342 0.9339911 0.3696252</span></span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; </span></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.007315334 0.889597376 0.177145720 0.047882841 0.709211890</span></span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.8000992 0.7241276 0.3298802 0.4333738 0.8088079</span></span></code></pre></div>
 </div>
 <div id="manipulate-chain-replicates" class="section level2">
 <h2 class="hasAnchor">
@@ -141,16 +141,16 @@
 <span id="cb4-4"><a href="#cb4-4"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] 0.2157418 0.2891556 0.5093534 0.1552396 0.8182726</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] 0.2645676 0.9578545 0.7115471 0.8075658 0.8276697</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt; </span></span>
 <span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; [1] 0.07418282 0.17450525 0.10313065 0.86575329 0.40383108</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; [1] 0.8763424 0.5372236 0.8597400 0.8060749 0.5467459</span></span>
 <span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; </span></span>
 <span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; [1] 0.22277523 0.09634402 0.87436925 0.57511929 0.08104511</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; [1] 0.08714475 0.76919367 0.16805890 0.37635966 0.71258507</span></span>
 <span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; </span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; [1] 0.38448752 0.05046914 0.52254534 0.50738334 0.95067335</span></span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; [1] 0.7028548 0.9542366 0.3135864 0.5573352 0.4355049</span></span></code></pre></div>
 </div>
 <div id="convert-chains-to-lazy-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -162,9 +162,9 @@
 <span id="cb5-4"><a href="#cb5-4"></a><span class="st">  </span><span class="kw"><a href="reference/lazy.html">lazy</a></span>()</span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="kw">f</span>()</span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; [1] 0.3550804 0.8075318 0.1183232 0.9882320 0.7661952</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; [1] 0.7160124 0.5215522 0.5507023 0.8860974 0.8185149</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="kw">f</span>()</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.923663254 0.831025661 0.043342613 0.003438436 0.218767556</span></span></code></pre></div>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.1131869 0.3908302 0.4450760 0.9100345 0.1535788</span></span></code></pre></div>
 </div>
 </div>
 
@@ -207,7 +207,7 @@
 <li><a href="http://tinyurl.com/skk9m8b"><img src="https://github.com/yonicd/ripe/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
 <li><a href="https://travis-ci.org/yonicd/ripe"><img src="https://travis-ci.org/yonicd/ripe.svg?branch=master" alt="Travis-CI Build Status"></a></li>
 <li><a href="https://ci.appveyor.com/project/yonicd/ripe"><img src="https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&amp;svg=true" alt="AppVeyor build status"></a></li>
-<li><a href="http://tinyurl.com/vzcsnsa"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_11_24-brightgreen.svg" alt="Covrpage Summary"></a></li>
+<li><a href="http://tinyurl.com/vzcsnsa"><img src="https://img.shields.io/badge/covrpage-Last_Build_2019_11_25-brightgreen.svg" alt="Covrpage Summary"></a></li>
 <li><a href="https://codecov.io/gh/yonicd/ripe?branch=master"><img src="https://codecov.io/gh/yonicd/ripe/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
