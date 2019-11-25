@@ -8,9 +8,12 @@ vignette: >
 ---
 
 ```{r, include = FALSE}
+set.seed(123)
+
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  cache = TRUE
 )
 ```
 
@@ -20,8 +23,7 @@ library(ripe)
 
 ## replicate
 
-```{r example}
-
+```{r}
 stats::runif(20)%>%
   ripe(replicate,n=2,simplify=FALSE)
 

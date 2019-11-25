@@ -31,6 +31,7 @@ stats::runif(20)\%>\%
 \seealso{
 \code{\link[purrr]{rerun}}
 
-Other ripe: \code{\link{lazy}}
+Other ripe: 
+\code{\link{lazy}()}
 }
 \concept{ripe}

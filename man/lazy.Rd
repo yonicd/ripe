@@ -21,6 +21,7 @@ f <- stats::runif(20)\%>\%sample(10)\%>\%lazy()
 f()
 }
 \seealso{
-Other ripe: \code{\link{ripe}}
+Other ripe: 
+\code{\link{ripe}()}
 }
 \concept{ripe}
