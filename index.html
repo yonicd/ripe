@@ -104,13 +104,13 @@
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a><span class="kw"><a href="https://rdrr.io/r/base/lapply.html">replicate</a></span>(<span class="dt">n=</span><span class="dv">3</span>,<span class="kw">f</span>(),<span class="dt">simplify =</span> <span class="ot">FALSE</span>)</span>
 <span id="cb2-10"><a href="#cb2-10"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; [1] 0.69295333 0.31050425 0.44839730 0.94168462 0.04615096</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="co">#&gt; [1] 0.38093270 0.73097543 0.25009930 0.80418468 0.05322074</span></span>
 <span id="cb2-12"><a href="#cb2-12"></a><span class="co">#&gt; </span></span>
 <span id="cb2-13"><a href="#cb2-13"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; [1] 0.5184982 0.2422785 0.3921641 0.5997600 0.7471231</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="co">#&gt; [1] 0.59636151 0.39409609 0.08905486 0.76742977 0.57402894</span></span>
 <span id="cb2-15"><a href="#cb2-15"></a><span class="co">#&gt; </span></span>
 <span id="cb2-16"><a href="#cb2-16"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; [1] 0.8999272 0.8508536 0.1873123 0.9933916 0.1284693</span></span></code></pre></div>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="co">#&gt; [1] 0.5841499 0.5635884 0.4473566 0.6864538 0.3958116</span></span></code></pre></div>
 </div>
 <div id="this-is-better" class="section level2">
 <h2 class="hasAnchor">
@@ -120,16 +120,16 @@
 <span id="cb3-3"><a href="#cb3-3"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.19802666 0.15033372 0.01359177 0.11582702 0.81357921</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="co">#&gt; [1] 0.0980762 0.8076331 0.8391159 0.8985361 0.2669076</span></span>
 <span id="cb3-7"><a href="#cb3-7"></a><span class="co">#&gt; </span></span>
 <span id="cb3-8"><a href="#cb3-8"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.6497813 0.9864003 0.2219489 0.5159617 0.2342938</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="co">#&gt; [1] 0.4724232 0.9550078 0.5247090 0.7663558 0.2450507</span></span>
 <span id="cb3-10"><a href="#cb3-10"></a><span class="co">#&gt; </span></span>
 <span id="cb3-11"><a href="#cb3-11"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.02846408 0.48022523 0.79690657 0.05437896 0.88495142</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">#&gt; [1] 0.4770681 0.2128652 0.5108639 0.6574667 0.9480330</span></span>
 <span id="cb3-13"><a href="#cb3-13"></a><span class="co">#&gt; </span></span>
 <span id="cb3-14"><a href="#cb3-14"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.5623372 0.6859795 0.8746137 0.3345777 0.1262017</span></span></code></pre></div>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="co">#&gt; [1] 0.27461605 0.21706938 0.04173089 0.55102067 0.53353964</span></span></code></pre></div>
 </div>
 <div id="manipulate-chain-replicates" class="section level2">
 <h2 class="hasAnchor">
@@ -141,16 +141,16 @@
 <span id="cb4-4"><a href="#cb4-4"></a><span class="st">  </span>utils<span class="op">::</span><span class="kw"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="dv">5</span>)<span class="op">%&gt;%</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a><span class="st">  </span><span class="kw"><a href="reference/ripe.html">ripe</a></span>(replicate,<span class="dt">n=</span><span class="dv">4</span>,<span class="dt">simplify=</span><span class="ot">FALSE</span>)</span>
 <span id="cb4-6"><a href="#cb4-6"></a><span class="co">#&gt; [[1]]</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] 0.19930139 0.06623005 0.44470527 0.75990626 0.98201629</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">#&gt; [1] 0.9912533 0.3100675 0.5134276 0.6086587 0.4879590</span></span>
 <span id="cb4-8"><a href="#cb4-8"></a><span class="co">#&gt; </span></span>
 <span id="cb4-9"><a href="#cb4-9"></a><span class="co">#&gt; [[2]]</span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; [1] 0.55157096 0.30564206 0.00214068 0.04011838 0.52100994</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">#&gt; [1] 0.5386816 0.4993609 0.4198393 0.5317595 0.8058459</span></span>
 <span id="cb4-11"><a href="#cb4-11"></a><span class="co">#&gt; </span></span>
 <span id="cb4-12"><a href="#cb4-12"></a><span class="co">#&gt; [[3]]</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; [1] 0.5770010 0.5973573 0.2633657 0.5902179 0.3289255</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="co">#&gt; [1] 0.6485808 0.2867558 0.5378892 0.2728772 0.1061414</span></span>
 <span id="cb4-14"><a href="#cb4-14"></a><span class="co">#&gt; </span></span>
 <span id="cb4-15"><a href="#cb4-15"></a><span class="co">#&gt; [[4]]</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; [1] 0.17105012 0.06681706 0.80914022 0.04611186 0.25164716</span></span></code></pre></div>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="co">#&gt; [1] 0.030321112 0.008934174 0.697521101 0.883689244 0.421063717</span></span></code></pre></div>
 </div>
 <div id="convert-chains-to-lazy-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -162,9 +162,9 @@
 <span id="cb5-4"><a href="#cb5-4"></a><span class="st">  </span><span class="kw"><a href="reference/lazy.html">lazy</a></span>()</span>
 <span id="cb5-5"><a href="#cb5-5"></a></span>
 <span id="cb5-6"><a href="#cb5-6"></a><span class="kw">f</span>()</span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; [1] 0.77193624 0.40752555 0.89320585 0.08355926 0.18302742</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="co">#&gt; [1] 0.6203123 0.3724745 0.3080794 0.7984475 0.5939037</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a><span class="kw">f</span>()</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.6610223 0.9311337 0.3994909 0.4229936 0.4745911</span></span></code></pre></div>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="co">#&gt; [1] 0.11040607 0.06749721 0.81082026 0.97194286 0.21162124</span></span></code></pre></div>
 </div>
 </div>
 
