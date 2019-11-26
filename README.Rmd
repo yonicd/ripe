@@ -6,7 +6,7 @@ always_allow_html: yes
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- badges: start -->
-[![R build status](https://github.com/yonicd/ripe/workflows/R/badge.svg)](http://tinyurl.com/vptyaou)
+[![R build status](https://github.com/yonicd/ripe/workflows/R/badge.svg)](https://github.com/yonicd/ripe)
 [![Codecov test coverage](https://codecov.io/gh/yonicd/ripe/branch/master/graph/badge.svg)](https://codecov.io/gh/yonicd/ripe?branch=master)
 [![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
 <!-- badges: end -->
@@ -23,7 +23,7 @@ library(ripe)
 
 # ripe <img src="https://github.com/yonicd/ripe/raw/master/input/logo.png" align="right"  class="logo"/>
 
-The goal of ripe is to create a more flexible way to rerun {magrittr} pipes.
+The goal of ripe is to create a more flexible way to rerun {magrittr} pipelines.
 
 ## Installation
 
@@ -34,7 +34,7 @@ remotes::install_github('yonicd/ripe')
 
 ## Goal 
 
-We want to write the following in a shorter and more flexible way
+We want to rerun the following pipeline that contains stochastic elements in a shorter and more flexible way
 
 ```{r}
 
@@ -45,35 +45,56 @@ f <- function(){
     utils::head(5)
 }
 
+set.seed(123)
+
 replicate(n=3,f(),simplify = FALSE)
 
 ```
 
+## Can't I just add replicate to the end of it?
+
+```{r}
+
+set.seed(123)
+
+stats::runif(20)%>%
+   sample(10)%>%
+   utils::head(5)%>%
+   replicate(n = 3,simplify = FALSE)
+```
+
+That didn't do what we wanted...
+
 ## This is better!
 
 ```{r}
+
+set.seed(123)
+
 stats::runif(20)%>%
   sample(10)%>%
   utils::head(5)%>%
-  ripe(replicate,n=4,simplify=FALSE)
+  ripe(replicate,n=3,simplify=FALSE)
 ```
 
-## Manipulate Chain Replicates
+## Manipulate Pipeline Replicates
 
-We can now manipulate the chain or move `ripe` around into different subsets of the chain, creating iterative replication workflows.
+We can now manipulate the pipeline or move `ripe` around into different subsets of the function sequence, creating iterative replication workflows.
 
 ```{r}
+
+set.seed(123)
 
 stats::runif(20)%>%
   #sample(10)%>%
   utils::head(5)%>%
-  ripe(replicate,n=4,simplify=FALSE)
+  ripe(replicate,n=3,simplify=FALSE)
   
 ```
 
-## Convert Chains to Lazy Functions
+## Convert Pipelines to Lazy Functions
 
-You can also quickly convert the chain to a lazyeval function
+You can also quickly convert the pipelines to a lazyeval function
 
 ```{r}
 f <- stats::runif(20)%>%
@@ -81,6 +102,9 @@ f <- stats::runif(20)%>%
   utils::head(5)%>%
   lazy()
 
+set.seed(123)
+
 f()
+
 f()
 ```

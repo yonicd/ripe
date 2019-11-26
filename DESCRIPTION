@@ -1,9 +1,12 @@
 Package: ripe
-Title: Replicate 'Magrittr' Chains
+Title: Rerun 'Magrittr' Pipelines
 Version: 0.1.0
 Authors@R: person("Jonathan", "Sidi", email = "yonicd@gmail.com", role = c("aut",
          "cre"))
-Description: Replicate 'magrittr' chains directly at the end of the chain.
+Description: Functions in a 'magrittr' pipeline are evaluated sequentially making it
+         impossible to rerun them directly from the end of the pipeline, while preserving 
+         stochastic characteristics embedded within the pipeline. This package 
+         allows the user to rerun pipelines using natural 'magrittr' syntax.
 Depends: R (>= 3.5.0)
 Imports: magrittr
 License: MIT + file LICENSE
