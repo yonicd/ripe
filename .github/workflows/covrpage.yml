@@ -53,7 +53,7 @@ jobs:
           Rscript -e 'install.packages(c("remotes","rcmdcheck"))' \
                   -e 'remotes::install_deps(dependencies = TRUE)'
                   
-     - name: Check
+      - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '${{ matrix.config.args }}', error_on = 'warning', check_dir = 'check')"
 
       - name: covr
