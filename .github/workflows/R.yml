@@ -75,6 +75,7 @@ jobs:
           git add .
           git commit -m 'style'
       - uses: r-lib/actions/pr-push@master
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'            
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}          
       - name: Deploy package
