@@ -72,12 +72,8 @@ jobs:
       - name: commit
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'            
         run: |
-          git add .
-          git commit -m 'style'
-      - uses: r-lib/actions/pr-push@master
-        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'            
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}          
+          git add -A .
+          git commit --allow-empty -m 'Built covrpage'
       - name: Deploy package
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'      
         run: |
