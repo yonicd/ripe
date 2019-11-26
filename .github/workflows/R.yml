@@ -69,11 +69,7 @@ jobs:
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage@actions")' \
                   -e 'covrpage::covrpage_ci()'
-      - name: commit
-        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'            
-        run: |
-          git add -A .
-          git commit --allow-empty -m 'Built covrpage'
+
       - name: Deploy package
         if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'      
         run: |
