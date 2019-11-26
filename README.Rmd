@@ -6,11 +6,9 @@ always_allow_html: yes
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 <!-- badges: start -->
-[![R build status](https://github.com/yonicd/ripe/workflows/R-CMD-check/badge.svg)](http://tinyurl.com/skk9m8b)
-[![Travis-CI Build Status](https://travis-ci.org/yonicd/ripe.svg?branch=master)](https://travis-ci.org/yonicd/ripe)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&svg=true)](https://ci.appveyor.com/project/yonicd/ripe)
-[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
+[![R build status](https://github.com/yonicd/ripe/workflows/R/badge.svg)](http://tinyurl.com/vptyaou)
 [![Codecov test coverage](https://codecov.io/gh/yonicd/ripe/branch/master/graph/badge.svg)](https://codecov.io/gh/yonicd/ripe?branch=master)
+[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
 <!-- badges: end -->
 
 ```{r, echo = FALSE}

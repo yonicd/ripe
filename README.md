@@ -4,15 +4,11 @@
 <!-- badges: start -->
 
 [![R build
-status](https://github.com/yonicd/ripe/workflows/R-CMD-check/badge.svg)](http://tinyurl.com/skk9m8b)
-[![Travis-CI Build
-Status](https://travis-ci.org/yonicd/ripe.svg?branch=master)](https://travis-ci.org/yonicd/ripe)
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/yonicd/ripe?branch=master&svg=true)](https://ci.appveyor.com/project/yonicd/ripe)
-[![Covrpage
-Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
+status](https://github.com/yonicd/ripe/workflows/R/badge.svg)](http://tinyurl.com/vptyaou)
 [![Codecov test
 coverage](https://codecov.io/gh/yonicd/ripe/branch/master/graph/badge.svg)](https://codecov.io/gh/yonicd/ripe?branch=master)
+[![Covrpage
+Summary](https://img.shields.io/badge/covrpage-Last_Build_2019_11_20-brightgreen.svg)](http://tinyurl.com/vzcsnsa)
 <!-- badges: end -->
 
 # ripe <img src="https://github.com/yonicd/ripe/raw/master/input/logo.png" align="right"  class="logo"/>
@@ -41,13 +37,13 @@ f <- function(){
 
 replicate(n=3,f(),simplify = FALSE)
 #> [[1]]
-#> [1] 0.2317667 0.1222064 0.2630449 0.7754020 0.4002443
+#> [1] 0.0968035 0.8454892 0.1745602 0.3575017 0.4501556
 #> 
 #> [[2]]
-#> [1] 0.1768112 0.6522519 0.9192636 0.9669322 0.2738735
+#> [1] 0.3679469 0.1098656 0.8822747 0.4639327 0.4780120
 #> 
 #> [[3]]
-#> [1] 0.008380913 0.083472511 0.525649466 0.730356304 0.223921552
+#> [1] 0.4928808 0.4216918 0.9623356 0.9968997 0.4267262
 ```
 
 ## This is better\!
@@ -58,16 +54,16 @@ stats::runif(20)%>%
   utils::head(5)%>%
   ripe(replicate,n=4,simplify=FALSE)
 #> [[1]]
-#> [1] 0.04705531 0.74272559 0.02636577 0.16136714 0.35779201
+#> [1] 0.8804825 0.3483930 0.4533070 0.6211814 0.9554034
 #> 
 #> [[2]]
-#> [1] 0.59714384 0.02237308 0.87255143 0.60636273 0.99940225
+#> [1] 0.070709895 0.294193154 0.079700112 0.003996361 0.669914183
 #> 
 #> [[3]]
-#> [1] 0.3755368 0.8377554 0.5037635 0.9842267 0.7926570
+#> [1] 0.6945401 0.8577393 0.9127064 0.8887865 0.3525595
 #> 
 #> [[4]]
-#> [1] 0.72176156 0.84955761 0.67836683 0.62720485 0.02738864
+#> [1] 0.1899845 0.3562713 0.5428040 0.5239328 0.1734483
 ```
 
 ## Manipulate Chain Replicates
@@ -82,16 +78,16 @@ stats::runif(20)%>%
   utils::head(5)%>%
   ripe(replicate,n=4,simplify=FALSE)
 #> [[1]]
-#> [1] 0.7484752 0.0659380 0.2341110 0.5354226 0.9545616
+#> [1] 0.4190696 0.5421558 0.2328920 0.7534823 0.7022927
 #> 
 #> [[2]]
-#> [1] 0.5708032 0.3733576 0.4422898 0.4108141 0.1941598
+#> [1] 0.71623630 0.01033047 0.22529627 0.59411469 0.96655041
 #> 
 #> [[3]]
-#> [1] 0.7147133 0.6300439 0.2011207 0.3689243 0.7010698
+#> [1] 0.1212441 0.7031401 0.2986797 0.2795129 0.1539391
 #> 
 #> [[4]]
-#> [1] 0.82576538 0.63758231 0.95799262 0.01546961 0.08182570
+#> [1] 0.1000496 0.6999692 0.1246881 0.7505028 0.1989340
 ```
 
 ## Convert Chains to Lazy Functions
@@ -105,7 +101,7 @@ f <- stats::runif(20)%>%
   lazy()
 
 f()
-#> [1] 0.37886551 0.50334015 0.58871377 0.04519280 0.04190966
+#> [1] 0.9952948 0.9964912 0.7221552 0.5073125 0.6166304
 f()
-#> [1] 0.20745522 0.95520404 0.77578514 0.85771197 0.02654204
+#> [1] 0.84495838 0.62491868 0.47617926 0.57319266 0.09440818
 ```
