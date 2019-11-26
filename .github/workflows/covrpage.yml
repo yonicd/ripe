@@ -49,9 +49,7 @@ jobs:
           sudo -s eval "$sysreqs"      
       
       - name: Install dependencies
-        run: |
-          Rscript -e 'install.packages(c("remotes","rcmdcheck"))' \
-                  -e 'remotes::install_deps(dependencies = TRUE)'
+        run: Rscript -e "install.packages('remotes')" -e "remotes::install_deps(dependencies = TRUE)" -e "remotes::install_cran('rcmdcheck')"
                   
       - name: Check
         run: Rscript -e "rcmdcheck::rcmdcheck(args = '${{ matrix.config.args }}', error_on = 'warning', check_dir = 'check')"
@@ -63,14 +61,17 @@ jobs:
                   -e 'covr::codecov(token = "${{secrets.CODECOV_TOKEN}}")'
 
       - name: Install package
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'      
         run: R CMD INSTALL .
         
       - name: covrpage
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'      
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/covrpage@actions")' \
                   -e 'covrpage::covrpage_ci()'
 
       - name: Deploy package
+        if: matrix.config.os == 'macOS-latest' && matrix.config.r == '3.6'      
         run: |
           Rscript -e 'remotes::install_github("metrumresearchgroup/pkgdown")' \
                   -e "pkgdown:::deploy_local(new_process = FALSE, remote_url = 'https://x-access-token:${{secrets.GITHUB_PAT}}@github.com/${{github.repository}}.git')"          

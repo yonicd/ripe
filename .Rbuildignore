@@ -5,6 +5,8 @@
 ^README-.*\.png$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^\_travis\.yml$
+^\_appveyor\.yml$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
