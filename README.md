@@ -3,8 +3,12 @@
 
 <!-- badges: start -->
 
-[![R build
-status](https://github.com/yonicd/ripe/workflows/R/badge.svg)](https://github.com/yonicd/ripe)
+[![R-win build
+status](https://github.com/yonicd/ripe/workflows/R-win/badge.svg)](https://github.com/yonicd/ripe)
+[![R-mac build
+status](https://github.com/yonicd/ripe/workflows/R-mac/badge.svg)](https://github.com/yonicd/ripe)
+[![R-linux build
+status](https://github.com/yonicd/ripe/workflows/R-linux/badge.svg)](https://github.com/yonicd/ripe)
 [![Codecov test
 coverage](https://codecov.io/gh/yonicd/ripe/branch/master/graph/badge.svg)](https://codecov.io/gh/yonicd/ripe?branch=master)
 [![Covrpage
@@ -94,7 +98,8 @@ stats::runif(20)%>%
 ## Manipulate Pipeline Replicates
 
 We can now manipulate the pipeline or move `ripe` around into different
-subsets of the chain, creating iterative replication workflows.
+subsets of the function sequence, creating iterative replication
+workflows.
 
 ``` r
 
