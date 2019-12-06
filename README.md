@@ -3,6 +3,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ripe)](https://CRAN.R-project.org/package=ripe)
 [![R-win build
 status](https://github.com/yonicd/ripe/workflows/R-win/badge.svg)](https://github.com/yonicd/ripe)
 [![R-mac build
